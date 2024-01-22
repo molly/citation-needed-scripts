@@ -1,17 +1,8 @@
 import { GHOST_ADMIN_KEY } from "./secrets.js";
 import GhostAdminAPI from "@tryghost/admin-api";
 
-import headless from "@lexical/headless";
-import lexicalLink from "@lexical/link";
-import lexicalList from "@lexical/list";
-import lexicalRichText from "@lexical/rich-text";
-
-import { DEFAULT_NODES } from "@tryghost/kg-default-nodes";
-const { ListItemNode, ListNode } = lexicalList;
-const { HeadingNode, QuoteNode } = lexicalRichText;
-const { LinkNode } = lexicalLink;
-
-const { createHeadlessEditor } = headless;
+import { getEditor } from "./editor.js";
+import { processPost } from "./process.js";
 
 const api = new GhostAdminAPI({
   url: "https://citationneeded.news",
@@ -33,11 +24,9 @@ if (!posts.length) {
 
 const post = posts[0];
 const lexicalState = post.lexical;
+console.log(lexicalState);
 
-const nodes = [HeadingNode, ListNode, ListItemNode, QuoteNode, LinkNode, ...DEFAULT_NODES];
-const editor = createHeadlessEditor({
-  nodes,
-});
+// api.posts.add(Object.assign({}, post, { title: "Cite test", slug: "cite-test" }));
 
-const editorState = editor.parseEditorState(lexicalState);
-editor.setEditorState(editorState);
+const editor = getEditor(lexicalState);
+processPost(editor);
