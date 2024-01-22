@@ -1,0 +1,37 @@
+{
+  "name": "citation-needed-scripts",
+  "version": "0.0.1",
+  "description": "Scripts to support citationneeded.news",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/molly/citation-needed-scripts.git"
+  },
+  "keywords": [
+    "ghost"
+  ],
+  "author": "Molly White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molly/citation-needed-scripts/issues"
+  },
+  "homepage": "https://github.com/molly/citation-needed-scripts#readme",
+  "dependencies": {
+    "@lexical/headless": "^0.12.6",
+    "@lexical/link": "^0.12.6",
+    "@lexical/list": "^0.12.6",
+    "@lexical/rich-text": "^0.12.6",
+    "@tryghost/admin-api": "^1.13.11",
+    "@tryghost/kg-default-nodes": "^1.0.6",
+    "lexical": "0.12.6"
+  },
+  "overrides": {
+    "lexical": "0.12.6"
+  }
+}
