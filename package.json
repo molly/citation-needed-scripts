@@ -4,6 +4,9 @@
   "description": "Scripts to support citationneeded.news",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "^18.12.1"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "NODE_ENV=development node index.js",
@@ -29,6 +32,7 @@
     "@lexical/rich-text": "^0.12.6",
     "@tryghost/admin-api": "^1.13.11",
     "@tryghost/kg-default-nodes": "^1.0.6",
+    "cheerio": "^1.0.0-rc.12",
     "lexical": "0.12.6"
   },
   "overrides": {

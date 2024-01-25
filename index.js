@@ -1,6 +1,8 @@
 import { GHOST_ADMIN_KEY } from "./secrets.js";
 import GhostAdminAPI from "@tryghost/admin-api";
 
+import { JSDOM } from "jsdom";
+
 import { getEditor } from "./editor.js";
 import { processPost } from "./process.js";
 
@@ -22,11 +24,20 @@ if (!posts.length) {
   process.exit(1);
 }
 
-const post = posts[0];
-const lexicalState = post.lexical;
-console.log(lexicalState);
+const dom = new JSDOM();
+global.window = dom.window;
+global.document = dom.window.document;
+global.HTMLElement = dom.window.HTMLElement;
+global.DocumentFragment = dom.window.DocumentFragment;
 
-// api.posts.add(Object.assign({}, post, { title: "Cite test", slug: "cite-test" }));
+const post = posts[0];
+const postId = post.id;
+const lexicalState = post.lexical;
+
+// api.posts.add(Object.assign({}, post, { title: "Cite test", slug: "cite-test-dirty" }));
 
 const editor = getEditor(lexicalState);
-processPost(editor);
+const edited = await processPost(editor);
+
+const lexicalJson = JSON.stringify(edited);
+api.posts.edit({ id: postId, lexical: lexicalJson, updated_at: post.updated_at });

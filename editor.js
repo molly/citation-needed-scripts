@@ -20,5 +20,6 @@ export function getEditor(lexicalState) {
 
   const editorState = editor.parseEditorState(lexicalState);
   editor.setEditorState(editorState);
+  editor.setEditable(true); // Needed to change selections, etc.
   return editor;
 }
