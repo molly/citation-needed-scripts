@@ -3,20 +3,25 @@ const { $getRoot, $getNodeByKey } = lexical;
 
 import { $createHtmlNode } from "@tryghost/kg-default-nodes";
 
-import { getNotesHtml, cleanNoteHtml, getParagraphHtml, replaceTextAnchorsWithHtml } from "./html.js";
+import {
+  getNotesHtml,
+  cleanNoteHtml,
+  getParagraphHtml,
+  replaceTextAnchorsWithHtml,
+  createNotesSection,
+} from "./html.js";
 
 import footnotesSectionTemplate from "./templates/footnotesSection.js";
+import referencesSectionTemplate from "./templates/referencesSection.js";
 
-export const NOTE_ANCHOR_REGEX = new RegExp(/\[#(?<noteType>fn|ref)-(?<noteId>.*?)\]/, "g");
-const NOTE_CONTENT_REGEX = new RegExp(
-  /\[?(?<noteType>fn|ref)-(?<noteId>.*?)\](?<noteContent>.*?)(?=(?:\[?(?:fn|ref)|$))/,
-  "msg"
-);
+import { LETTERS, NOTE_ANCHOR_REGEX } from "./constants.js";
 
 export async function processPost(editor) {
   const footnoteMap = new Map();
   const referenceMap = new Map();
   const locationsMap = new Map();
+  let footnoteContentLocation;
+  let referenceContentLocation;
 
   const editorState = editor.getEditorState();
 
@@ -62,16 +67,27 @@ export async function processPost(editor) {
 
       // Get the actual content of the notes, ensure anchors are 1:1 with note content
       if (childText.trim().startsWith("[fn-") || childText.trim().startsWith("[ref-")) {
+        // Note location for later
+        if (childText.trim().startsWith("[fn-")) {
+          footnoteContentLocation = i;
+        } else {
+          referenceContentLocation = i;
+        }
+
         const notes = getNotesHtml(editor, child);
         for (let note of notes) {
           const cleanNote = cleanNoteHtml(note);
           // Stray <br>s etc. mean this can sometimes not be a valid footnote. Footnotes with content but no valid
-          // ID will throw.
+          // ID will throw; empty footnotes will just return null.
           if (cleanNote) {
-            const { id, noteType, content } = cleanNote;
+            let { id, noteType, content } = cleanNote;
             const map = noteType === "fn" ? footnoteMap : referenceMap;
             if (!map.has(id)) {
               throw Error(`Found footnote with ID not referenced in article body: ${id}`);
+            }
+            if (NOTE_ANCHOR_REGEX.test(content)) {
+              // There are notes within the note content, so go hydrate that
+              content = replaceTextAnchorsWithHtml(content, null, footnoteMap, referenceMap);
             }
             map.get(id)["noteContent"] = content;
           }
@@ -96,8 +112,12 @@ export async function processPost(editor) {
     const root = $getRoot();
     const children = root.getChildren();
 
-    // Substitute all paragraphs with notes with HTML versions, swapping out the anchors with the final HTML versions
+    // Substitute all text paragraphs with notes with HTML versions, swapping out the anchors with the final HTML versions
     for (let ind of locationsMap.keys()) {
+      if (ind === footnoteContentLocation || ind === referenceContentLocation) {
+        // We'll get these later, otherwise it messes things up when creating those sections.
+        continue;
+      }
       const notes = locationsMap.get(ind);
       const paragraphHtml = getParagraphHtml(editor, children[ind], children[ind + 1]);
       const result = replaceTextAnchorsWithHtml(paragraphHtml, notes, footnoteMap, referenceMap);
@@ -106,6 +126,16 @@ export async function processPost(editor) {
       const htmlNode = $createHtmlNode({ html: result });
       node.replace(htmlNode);
     }
+
+    // Create footnotes section
+    const footnoteHtml = createNotesSection(footnoteMap, footnotesSectionTemplate);
+    const footnoteNode = $getNodeByKey(children[footnoteContentLocation].getKey());
+    footnoteNode.replace($createHtmlNode({ html: footnoteHtml }));
+
+    // Create footnotes section
+    const referenceHtml = createNotesSection(referenceMap, referencesSectionTemplate);
+    const referenceNode = $getNodeByKey(children[referenceContentLocation].getKey());
+    referenceNode.replace($createHtmlNode({ html: referenceHtml }));
   });
 
   return editor.getEditorState();

@@ -4,9 +4,7 @@ import lexicalHtml from "@lexical/html";
 
 const { $createNodeSelection } = lexical;
 const { $generateHtmlFromNodes } = lexicalHtml;
-
-const NOTE_ID_REGEX = new RegExp(/\[(?<noteType>fn|ref)-(?<noteId>.*?)\] */);
-const LETTERS = "abcdefghijklmnopqrstuvwxyz";
+import { LETTERS, NOTE_ANCHOR_REGEX, NOTE_ID_REGEX } from "./constants.js";
 
 function removeExtraneousHtml($) {
   // Remove extraneous styles
@@ -121,8 +119,15 @@ export function getParagraphHtml(editor, paragraph, nextParagraph) {
   return $.html();
 }
 
-export function replaceTextAnchorsWithHtml(paragraphHtml, notes, footnoteMap, referenceMap) {
-  let newHtml = paragraphHtml.slice();
+export function replaceTextAnchorsWithHtml(html, notes = null, footnoteMap, referenceMap) {
+  let newHtml = html.slice();
+  if (!notes) {
+    notes = [];
+    const notesMatch = newHtml.matchAll(/\[#(?<noteType>fn|ref)-(?<noteId>.*?)\]/g);
+    for (let match of notesMatch) {
+      notes.push(match.groups);
+    }
+  }
   for (let note of notes) {
     const map = note.noteType === "fn" ? footnoteMap : referenceMap;
     const noteType = note.noteType === "fn" ? "footnote" : "reference";
@@ -141,4 +146,27 @@ export function replaceTextAnchorsWithHtml(paragraphHtml, notes, footnoteMap, re
     newHtml = newHtml.replaceAll(toSwap, noteHtml);
   }
   return newHtml;
+}
+
+export function createNotesSection(noteMap, template) {
+  let html = template;
+  for (let note of noteMap.values()) {
+    html += `<li id="footnote-${note.index}">${note.noteContent}</li>`;
+  }
+  html += `</ol>\n</div>`;
+  const $ = cheerio.load(html, null, false);
+  const $p = $("ol")
+    .find("li")
+    .each(function () {
+      const $this = $(this);
+      const id = $this.attr("id");
+      const [noteType, noteIndex] = id.split("-");
+      const noteLabel = noteType === "footnote" ? LETTERS[parseInt(noteIndex, 10) - 1] : noteIndex;
+      $this
+        .children("p")
+        .append(
+          ` <a href="#${noteType}-anchor-${noteIndex}" title="Jump back to ${noteType} ${noteLabel} in the text.">↩</a>`
+        );
+    });
+  return $.html();
 }

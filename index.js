@@ -34,7 +34,9 @@ const post = posts[0];
 const postId = post.id;
 const lexicalState = post.lexical;
 
-// api.posts.add(Object.assign({}, post, { title: "Cite test", slug: "cite-test-dirty" }));
+if (!process.argv.length > 3 || process.argv[3] !== "--no-backup") {
+  api.posts.add(Object.assign({}, post, { title: `${post.title} backup`, slug: `${post.slug}-backup` }));
+}
 
 const editor = getEditor(lexicalState);
 const edited = await processPost(editor);
