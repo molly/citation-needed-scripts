@@ -37,4 +37,4 @@ References/footnotes can use note anchors within their content, for example:
 [fn-id1] This is a note that cites another source.[#ref-id1] More note content...
 ```
 
-A longer example of the markup used in the Ghost editor is at [example-markup.txt](docs/example-markup.txt), and the output is at [example-output.txt](docs/example-output.txt). This is a (slightly simplified) portion of an [actual live post](https://citationneeded.news/issue-49/)
+A longer example of the markup used in the Ghost editor is at [example-markup.txt](docs/example-markup.txt), and the output is at [example-output.txt](docs/example-output.txt). This is a (slightly simplified) portion of an [actual live post](https://citationneeded.news/issue-49/).

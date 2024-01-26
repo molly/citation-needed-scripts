@@ -32,10 +32,12 @@ dissented, but did not issue a statement of his own.
 actually exchange-traded products (ETPs), not exchange-traded funds (ETFs).
 
 [ref-gensler] "Statement on the Approval of Spot Bitcoin Exchange-Traded Products" by Gary Gensler.
-U.S. Securities and Exchange Commission. [ref-peirce] "Out, Damned Spot! Out, I Say!: Statement on
-Omnibus Approval Order for List and Trade Bitcoin-Based Commodity-Based Trust Shares and Trust
-Units", Hester Peirce. U.S. Securities and Exchange Commission. [ref-uyeda] "Statement Regarding the
-Commission’s Approval of Proposed Rule Changes to List and Trade Shares of Spot Bitcoin
-Exchange-Traded Products" by Mark Uyeda. U.S. Securities and Exchange Commission. [ref-crenshaw]
-"Statement Dissenting from Approval of Proposed Rule Changes to List and Trade Spot Bitcoin
-Exchange-Traded Products" by Caroline Crenshaw. U.S. Securities and Exchange Commission.
+U.S. Securities and Exchange Commission.
+[ref-peirce] "Out, Damned Spot! Out, I Say!: Statement on Omnibus Approval Order for List and Trade
+Bitcoin-Based Commodity-Based Trust Shares and Trust Units", Hester Peirce. U.S. Securities and
+Exchange Commission.
+[ref-uyeda] "Statement Regarding the Commission’s Approval of Proposed Rule Changes to List and 
+Trade Shares of Spot Bitcoin Exchange-Traded Products" by Mark Uyeda. U.S. Securities and Exchange
+Commission.
+[ref-crenshaw] "Statement Dissenting from Approval of Proposed Rule Changes to List and Trade Spot
+Bitcoin Exchange-Traded Products" by Caroline Crenshaw. U.S. Securities and Exchange Commission.
