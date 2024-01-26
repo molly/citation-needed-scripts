@@ -87,7 +87,7 @@ export function getNotesHtml(editor, el) {
       }
 
       nodeSelection.add(nodeKey);
-      lastKey = parseInt(nodeKey, 10);
+      lastKey = nodeKeyInt;
     }
     const html = $generateHtmlFromNodes(editor, nodeSelection);
     notes.push(html);
