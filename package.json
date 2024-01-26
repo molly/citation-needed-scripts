@@ -8,8 +8,8 @@
     "node": "^18.12.1"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "NODE_ENV=development node index.js",
+    "notes": "node notes/index.js",
+    "notes:dev": "NODE_ENV=development node notes/index.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./test"
   },
   "repository": {
