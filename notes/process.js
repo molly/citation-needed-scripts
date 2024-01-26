@@ -14,7 +14,7 @@ import {
 import footnotesSectionTemplate from "./templates/footnotesSection.js";
 import referencesSectionTemplate from "./templates/referencesSection.js";
 
-import { LETTERS, NOTE_ANCHOR_REGEX } from "./constants.js";
+import { NOTE_ANCHOR_REGEX } from "./constants.js";
 
 export async function processPost(editor) {
   const footnoteMap = new Map();
@@ -128,14 +128,18 @@ export async function processPost(editor) {
     }
 
     // Create footnotes section
-    const footnoteHtml = createNotesSection(footnoteMap, footnotesSectionTemplate);
-    const footnoteNode = $getNodeByKey(children[footnoteContentLocation].getKey());
-    footnoteNode.replace($createHtmlNode({ html: footnoteHtml }));
+    if (footnoteContentLocation) {
+      const footnoteHtml = createNotesSection(footnoteMap, footnotesSectionTemplate);
+      const footnoteNode = $getNodeByKey(children[footnoteContentLocation].getKey());
+      footnoteNode.replace($createHtmlNode({ html: footnoteHtml }));
+    }
 
-    // Create footnotes section
-    const referenceHtml = createNotesSection(referenceMap, referencesSectionTemplate);
-    const referenceNode = $getNodeByKey(children[referenceContentLocation].getKey());
-    referenceNode.replace($createHtmlNode({ html: referenceHtml }));
+    // Create references section
+    if (referenceContentLocation) {
+      const referenceHtml = createNotesSection(referenceMap, referencesSectionTemplate);
+      const referenceNode = $getNodeByKey(children[referenceContentLocation].getKey());
+      referenceNode.replace($createHtmlNode({ html: referenceHtml }));
+    }
   });
 
   return editor.getEditorState();

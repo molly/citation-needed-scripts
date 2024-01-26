@@ -4,11 +4,19 @@ import lexicalHtml from "@lexical/html";
 
 const { $createNodeSelection } = lexical;
 const { $generateHtmlFromNodes } = lexicalHtml;
-import { LETTERS, NOTE_ANCHOR_REGEX, NOTE_ID_REGEX } from "./constants.js";
+import { LETTERS, NOTE_ID_REGEX } from "./constants.js";
 
-function removeExtraneousHtml($) {
+export function removeExtraneousHtml($) {
   // Remove extraneous styles
-  $("*[style='white-space: pre-wrap;']").removeAttr("style");
+  $("*[style]").each(function () {
+    const $this = $(this);
+    if ($this.attr("style") === "white-space: pre-wrap;") {
+      $this.removeAttr("style");
+    } else {
+      const style = $this.attr("style").replace("white-space: pre-wrap;", "").trim();
+      $this.attr("style", style);
+    }
+  });
 
   // Remove spans not used for additional styling
   $("span")
@@ -40,15 +48,6 @@ export function cleanNoteHtml(note) {
 
   // Remove extraneous styles
   removeExtraneousHtml($);
-
-  // Remove spans not used for additional styling
-  $("span")
-    .filter(function () {
-      return !$(this).attr("style") && !$(this).attr("class");
-    })
-    .replaceWith(function () {
-      return $(this).html();
-    });
 
   // Remove trailing <br>
   const children = $p.children();

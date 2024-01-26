@@ -10,7 +10,7 @@ You will need to save a `secrets.js` file with a Ghost API key to handle the fet
 export const GHOST_ADMIN_KEY = "ghost_key_goes_here";
 ```
 
-Use at your own risk — this script hasn't been meticulously tested with all Ghost markup.
+Use at your own risk — this script hasn't been meticulously tested with all Ghost markup. I would recommend running it at the very end of your writing, because it will turn any content sections containing notes into HTML sections, which then require you to write HTML to do any formatting.
 
 ## Post format
 
