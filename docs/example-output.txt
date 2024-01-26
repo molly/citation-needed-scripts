@@ -1,19 +1,79 @@
-<p>The SEC approved those eleven applications to create the first-ever bitcoin spot ETPs<sup id="footnote-anchor-1" class="footnote-anchor"><a href="#footnote-1">a</a></sup> that I mentioned last week [I48]. Although most people knew it was coming, this was still big news in the crypto industry, which has been awaiting such a product for more than ten years.</p>
+<p>The SEC approved those eleven applications to create the first-ever bitcoin spot ETPs<sup id="footnote-anchor-1"
+    class="footnote-anchor"><a href="#footnote-1">a</a></sup> that I mentioned
+  last week [I48]. Although most people knew it was coming, this was still big news in the crypto
+  industry, which has been awaiting such a product for more than ten years.</p>
 
-<p>The approval came with it a statement from SEC Chairman Gary Gensler, and I've honestly got to hand it to him as a writer. I've heard people speak through gritted teeth before, but I'm not sure I've ever read anything so clearly written through gritted teeth until now. With all the sincerity of an apology that starts with "my mom said I have to apologize," Gensler announced the approval (which he voted for), explaining that the SEC was left with little choice but to approve the applications after an appellate court overturned a previous rejection decision [I38]. He ended his statement with a firm condemnation of bitcoin:<sup id="reference-anchor-1" class="reference-anchor"><a href="#reference-1">1</a></sup></p>
+<p>The approval came with it a statement from SEC Chairman Gary Gensler, and I've honestly got to
+  hand it to him as a writer. I've heard people speak through gritted teeth before, but I'm not sure
+  I've ever read anything so clearly written through gritted teeth until now. With all the sincerity
+  of an apology that starts with "my mom said I have to apologize," Gensler announced the approval
+  (which he voted for), explaining that the SEC was left with little choice but to approve the
+  applications after an appellate court overturned a previous rejection decision [I38]. He ended his
+  statement with a firm condemnation of bitcoin:<sup id="reference-anchor-1" class="reference-anchor"><a
+      href="#reference-1">1</a></sup></p>
 
-<p>Three other SEC Commissioners also issued statements: the historically crypto-loving Hester Peirce celebrated the approval and condemned her own agency for taking so long to get around to it.<sup id="reference-anchor-2" class="reference-anchor"><a href="#reference-2">2</a></sup> Similarly, Mark Uyeda spoke positively about the approval while criticizing the SEC's process.<sup id="reference-anchor-3" class="reference-anchor"><a href="#reference-3">3</a></sup></p>
+<p>Three other SEC Commissioners also issued statements: the historically crypto-loving Hester
+  Peirce celebrated the approval and condemned her own agency for taking so long to get around to
+  it.<sup id="reference-anchor-2" class="reference-anchor"><a href="#reference-2">2</a></sup>
+  Similarly, Mark Uyeda spoke positively about the approval while criticizing the SEC's process.<sup
+    id="reference-anchor-3" class="reference-anchor"><a href="#reference-3">3</a></sup></p>
 
-<p>Caroline Crenshaw, who voted against the approval, issued a strongly critical statement, writing that the agency's "actions are unsound and ahistorical. And worse, they put us on a wayward path that could further sacrifice investor protection."<sup id="reference-anchor-4" class="reference-anchor"><a href="#reference-4">4</a></sup> You would not imagine my surprise when I noticed she'd cited my work in her dissenting statement! (Footnote 16). Jaime Lizárraga also dissented, but did not issue a statement of his own.</p>
+<p>Caroline Crenshaw, who voted against the approval, issued a strongly critical statement, writing
+  that the agency's "actions are unsound and ahistorical. And worse, they put us on a wayward path
+  that could further sacrifice investor protection."<sup id="reference-anchor-4" class="reference-anchor"><a
+      href="#reference-4">4</a></sup> You would not imagine my surprise when I
+  noticed she'd cited my work in her dissenting statement! (Footnote 16). Jaime Lizárraga also
+  dissented, but did not issue a statement of his own.</p>
 
-Trading opened on Thursday, January 11, and there was indeed substantial early interest — although some of the reported billions in trading consisted of investors pulling funds out of the long-standing Grayscale Bitcoin Trust, or GBTC (which was converted from a trust into an ETP as a part of these approvals).
+Trading opened on Thursday, January 11, and there was indeed substantial early interest — although
+some of the reported billions in trading consisted of investors pulling funds out of the
+long-standing Grayscale Bitcoin Trust, or GBTC (which was converted from a trust into an ETP as a
+part of these approvals).
 
 <div class="footnotes">
-<h4>Footnotes</h4>
-<ol style="list-style: lower-alpha;"><li id="footnote-1"><p>Despite being broadly referred to as "Bitcoin ETFs" (including by me), these are apparently actually exchange-traded <i><em>products</em></i> (ETPs), not exchange-traded <i><em>funds</em></i> (ETFs).<sup id="reference-anchor-4" class="reference-anchor"><a href="#reference-4">4</a></sup> ETFs are a type of ETP, but not all ETPs are ETFs (all squares are rectangles, but not all rectangles are squares). <a href="#footnote-anchor-1" title="Jump back to footnote a in the text.">↩</a></p></li></ol>
+  <h4>Footnotes</h4>
+  <ol style="list-style: lower-alpha;">
+    <li id="footnote-1">
+      <p>Despite being broadly referred to as "Bitcoin ETFs" (including by me), these are apparently
+        actually exchange-traded <i><em>products</em></i> (ETPs), not exchange-traded
+        <i><em>funds</em></i> (ETFs).<sup id="reference-anchor-4" class="reference-anchor"><a
+            href="#reference-4">4</a></sup> ETFs are a type of ETP, but not all ETPs are ETFs (all squares
+        are rectangles, but not all rectangles are squares). <a href="#footnote-anchor-1" title="Jump
+      back to footnote a in the text.">↩</a>
+      </p>
+    </li>
+  </ol>
 </div>
 
 <div class="references">
-<h4>References</h4>
-<ol><li id="footnote-1"><p>"<a href="https://www.sec.gov/news/statement/gensler-statement-spot-bitcoin-011023">Statement on the Approval of Spot Bitcoin Exchange-Traded Products</a>" by Gary Gensler. U.S. Securities and Exchange Commission. <a href="#footnote-anchor-1" title="Jump back to footnote a in the text.">↩</a></p></li><li id="footnote-2"><p>"<a href="https://www.sec.gov/news/statement/peirce-statement-spot-bitcoin-011023">Out, Damned Spot! Out, I Say!: Statement on Omnibus Approval Order for List and Trade Bitcoin-Based Commodity-Based Trust Shares and Trust Units</a>", Hester Peirce. U.S. Securities and Exchange Commission. <a href="#footnote-anchor-2" title="Jump back to footnote b in the text.">↩</a></p></li><li id="footnote-3"><p>"<a href="https://www.sec.gov/news/statement/uyeda-statement-spot-bitcoin-011023">Statement Regarding the Commission’s Approval of Proposed Rule Changes to List and Trade Shares of Spot Bitcoin Exchange-Traded Products</a>" by Mark Uyeda. U.S. Securities and Exchange Commission. <a href="#footnote-anchor-3" title="Jump back to footnote c in the text.">↩</a></p></li><li id="footnote-4"><p>"<a href="https://www.sec.gov/news/statement/crenshaw-statement-spot-bitcoin-011023">Statement Dissenting from Approval of Proposed Rule Changes to List and Trade Spot Bitcoin Exchange-Traded Products</a>" by Caroline Crenshaw. U.S. Securities and Exchange Commission. <a href="#footnote-anchor-4" title="Jump back to footnote d in the text.">↩</a></p></li></ol>
+  <h4>References</h4>
+  <ol>
+    <li id="footnote-1">
+      <p>"<a href="https://www.sec.gov/news/statement/gensler-statement-spot-bitcoin-011023">Statement on
+          the Approval of Spot Bitcoin Exchange-Traded Products</a>" by Gary Gensler. U.S. Securities
+        and Exchange Commission. <a href="#footnote-anchor-1" title="Jump back to footnote a in the
+      text.">↩</a></p>
+    </li>
+    <li id="footnote-2">
+      <p>"<a href="https://www.sec.gov/news/statement/peirce-statement-spot-bitcoin-011023">Out,
+          Damned Spot! Out, I Say!: Statement on Omnibus Approval Order for List and Trade Bitcoin-Based
+          Commodity-Based Trust Shares and Trust Units</a>", Hester Peirce. U.S. Securities and Exchange
+        Commission. <a href="#footnote-anchor-2" title="Jump back to footnote b in the
+      text.">↩</a></p>
+    </li>
+    <li id="footnote-3">
+      <p>"<a href="https://www.sec.gov/news/statement/uyeda-statement-spot-bitcoin-011023">Statement
+          Regarding the Commission’s Approval of Proposed Rule Changes to List and Trade Shares of Spot
+          Bitcoin Exchange-Traded Products</a>" by Mark Uyeda. U.S. Securities and Exchange Commission.
+        <a href="#footnote-anchor-3" title="Jump back to footnote c in the text.">↩</a>
+      </p>
+    </li>
+    <li id="footnote-4">
+      <p>"<a href="https://www.sec.gov/news/statement/crenshaw-statement-spot-bitcoin-011023">Statement
+          Dissenting from Approval of Proposed Rule Changes to List and Trade Spot Bitcoin
+          Exchange-Traded Products</a>" by Caroline Crenshaw. U.S. Securities and Exchange Commission.
+        <a href="#footnote-anchor-4" title="Jump back to footnote d in the text.">↩</a>
+      </p>
+    </li>
+  </ol>
 </div>

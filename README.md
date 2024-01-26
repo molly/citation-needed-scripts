@@ -4,6 +4,14 @@ Run the script with `npm start`, passing along the slug of the post as the first
 
 The script will automatically make a copy of your post at `${slug}-backup`. You can disable this with the `--no-backup` flag.
 
+You will need to save a `secrets.js` file with a Ghost API key to handle the fetching and updating of the post:
+
+```
+export const GHOST_ADMIN_KEY = "ghost_key_goes_here";
+```
+
+Use at your own risk — this script hasn't been meticulously tested with all Ghost markup.
+
 ## Post format
 
 The script will look for in-text footnote and reference anchors in the format `[#fn-id]` or `[#ref-id]`.
@@ -28,3 +36,5 @@ References/footnotes can use note anchors within their content, for example:
 ```
 [fn-id1] This is a note that cites another source.[#ref-id1] More note content...
 ```
+
+A longer example of the markup used in the Ghost editor is at [example-markup.txt](docs/example-markup.txt), and the output is at [example-output.txt](docs/example-output.txt). This is a (slightly simplified) portion of an [actual live post](https://citationneeded.news/issue-49/)
