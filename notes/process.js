@@ -129,14 +129,14 @@ export async function processPost(editor) {
 
     // Create footnotes section
     if (footnoteContentLocation) {
-      const footnoteHtml = createNotesSection(footnoteMap, footnotesSectionTemplate);
+      const footnoteHtml = createNotesSection(footnoteMap, footnotesSectionTemplate, "footnote");
       const footnoteNode = $getNodeByKey(children[footnoteContentLocation].getKey());
       footnoteNode.replace($createHtmlNode({ html: footnoteHtml }));
     }
 
     // Create references section
     if (referenceContentLocation) {
-      const referenceHtml = createNotesSection(referenceMap, referencesSectionTemplate);
+      const referenceHtml = createNotesSection(referenceMap, referencesSectionTemplate, "reference");
       const referenceNode = $getNodeByKey(children[referenceContentLocation].getKey());
       referenceNode.replace($createHtmlNode({ html: referenceHtml }));
     }

@@ -147,10 +147,10 @@ export function replaceTextAnchorsWithHtml(html, notes = null, footnoteMap, refe
   return newHtml;
 }
 
-export function createNotesSection(noteMap, template) {
+export function createNotesSection(noteMap, template, noteType) {
   let html = template;
   for (let note of noteMap.values()) {
-    html += `<li id="footnote-${note.index}">${note.noteContent}</li>`;
+    html += `<li id="${noteType}-${note.index}">${note.noteContent}</li>`;
   }
   html += `</ol>\n</div>`;
   const $ = cheerio.load(html, null, false);
@@ -159,7 +159,7 @@ export function createNotesSection(noteMap, template) {
     .each(function () {
       const $this = $(this);
       const id = $this.attr("id");
-      const [noteType, noteIndex] = id.split("-");
+      const [_, noteIndex] = id.split("-");
       const noteLabel = noteType === "footnote" ? LETTERS[parseInt(noteIndex, 10) - 1] : noteIndex;
       $this
         .children("p")
